@@ -1,5 +1,8 @@
 # SOLAR FLARE
 
+| Each NFT has its own class A, B, C, M, and X, and wavelength metadata | 
+| from 1 to 8. When a solar flare, whose classification is the same as your NFT, occurs, it will be unlocked.
+
 ```
 GET https://api.nasa.gov/DONKI/FLR?startDate=2023-11-01&endDate=2023-11-12&api_key=cT7U8404Iu3L9BCAkPEJ0BRWeXOM6ecLLqg8UJyY
 ```
@@ -7,8 +10,6 @@ GET https://api.nasa.gov/DONKI/FLR?startDate=2023-11-01&endDate=2023-11-12&api_k
 Scientists classify solar flares according to their X-ray brightness, in the wavelength range 1 to 8 Angstroms. Flares classes have names: A, B, C, M, and X, with A being the tiniest and X being the largest. Each category has nine subdivisions ranging from, e.g., C1 to C9, M1 to M9, and X1 to X9. These are logarithmic scales, much like the seismic Richter scale. So an M flare is 10 times as strong as a C flare.https://solar-center.stanford.edu/SID/activities/flare.html
 
 Flare calendar: https://www.spaceweatherlive.com/en/archive.html
-
-So for ASIDE, smart-contract can say: «Each NFT has its own class A, B, C, M, and X, and wavelength metadata from 1 to 8. When a solar flare, whose classification is the same as your NFT, occurs, it will be unlocked.»
 
 RESULT EXAMPLE (shorten):
 
