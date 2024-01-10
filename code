@@ -1,0 +1,373 @@
+SOLAR FLARE
+
+GET https://api.nasa.gov/DONKI/FLR?startDate=2023-11-01&endDate=2023-11-12&api_key=cT7U8404Iu3L9BCAkPEJ0BRWeXOM6ecLLqg8UJyY
+
+Scientists classify solar flares according to their X-ray brightness, in the wavelength range 1 to 8 Angstroms. Flares classes have names: A, B, C, M, and X, with A being the tiniest and X being the largest. Each category has nine subdivisions ranging from, e.g., C1 to C9, M1 to M9, and X1 to X9. These are logarithmic scales, much like the seismic Richter scale. So an M flare is 10 times as strong as a C flare.https://solar-center.stanford.edu/SID/activities/flare.html
+
+Flare calendar: https://www.spaceweatherlive.com/en/archive.html
+
+So for ASIDE, smart-contract can say: «Each NFT has its own class A, B, C, M, and X, and wavelength metadata from 1 to 8. When a solar flare, whose classification is the same as your NFT, occurs, it will be unlocked.»
+
+RESULT EXAMPLE (shorten):
+
+"flrID": "2023-11-03T04:40:00-FLR-001",
+        "instruments": [
+            {
+                "displayName": "GOES-P: EXIS 1.0-8.0"
+            }
+        ],
+        "beginTime": "2023-11-03T04:40Z",
+        "peakTime": "2023-11-03T06:17Z",
+        "endTime": "2023-11-03T07:00Z",
+        "classType": "C3.2",
+        "sourceLocation": "N30W30",
+        "activeRegionNum": null,
+        "linkedEvents": [
+            {
+                "activityID": "2023-11-03T05:48:00-CME-001"
+            }
+        ],
+  "https://webtools.ccmc.gsfc.nasa.gov/DONKI/view/FLR/27572/-1"
+GEOMAGNETIC STORM
+
+Référence: https://www.spaceweatherlive.com/en/help/the-kp-index.html
+
+The solar magnetic field reverses every 11 years. Here is the frequency of events ranked by magnitude. Bellow is an average of the total number of geomagnetic storms and their intensity measured in Kp.
+
+Capture d’écran, le 2023-12-13 à 16.58.58
+
+So for ASIDE, smart-contract can say: « If a geomagnetic storm whose kpIndex is superior »
+
+GET https://api.nasa.gov/DONKI/GST?startDate=2023-11-01&endDate=2023-11-12&api_key=cT7U8404Iu3L9BCAkPEJ0BRWeXOM6ecLLqg8UJyY
+
+RESULT EXAMPLE (shorten):
+
+"gstID": "2023-11-05T09:00:00-GST-001",
+        "startTime": "2023-11-05T09:00Z",
+        "allKpIndex": [
+            {
+                "observedTime": "2023-11-05T21:00Z",
+                "kpIndex": 6.33,
+                "source": "NOAA"
+            },
+            {
+                "observedTime": "2023-11-06T06:00Z",
+                "kpIndex": 5.67,
+                "source": "NOAA"}
+                ];
+                
+“https://webtools.ccmc.gsfc.nasa.gov/DONKI/view/GST/27600/-1”
+
+CORONAL MASS EJECTION
+
+Typically, coronal mass ejections are classified into three main categories, denoted as C, M, and X, with numerical subcategories (e.g., C1, C2, M1, M2, X1, X2, etc.). These classifications are based on the energy released by the CME, measured in X-rays. C-class eruptions are usually of low intensity, followed by M and X classes indicating increasingly powerful eruptions.
+
+GET https://api.nasa.gov/DONKI/CMEAnalysis?startDate=2023-11-01&endDate=2023-11-12&mostAccurateOnly=true&speed=500&speed=0&halfAngle=30&catalog=ALL&api_key=cT7U8404Iu3L9BCAkPEJ0BRWeXOM6ecLLqg8UJyY&default
+
+RESULT EXAMPLE (shorten):
+
+   {
+        "time21_5": "2023-11-06T13:39Z",
+        "latitude": -30.0,
+        "longitude": 62.0,
+        "halfAngle": 36.0,
+        "speed": 595.0,
+        "type": "C",
+        "isMostAccurate": true,
+        "associatedCMEID": "2023-11-06T07:36:00-CME-001",
+        "note": "A very approximate analysis (especially the longitude) since the source is close/on the limb and is not seen in its entirety.",
+        "catalog": "M2M_CATALOG",
+        "link": "https://webtools.ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/27632/-1"
+    },
+    {
+        "time21_5": "2023-11-08T11:39Z",
+        "latitude": 12.0,
+        "longitude": 88.0,
+        "halfAngle": 34.0,
+        "speed": 871.0,
+        "type": "C",
+        "isMostAccurate": true,
+        "associatedCMEID": "2023-11-08T07:24:00-CME-001",
+        "note": "Measurement of leading edge using SOHO LASCO C2/C3 in SWPC_CAT. Parameters obtained using source location coordinates.",
+        "catalog": "M2M_CATALOG",
+        "link": "https://webtools.ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/27644/-1"
+    },
+    
+EARTHQUAKE
+
+https://earthquake.usgs.gov/earthquakes/eventpage/us7000l9h4/executive
+
+API usage example:
+
+For exemple if i want a list of EarthQuake from 2023-10-10 to 2023-11-10 here with a minimum magnitude of 7:
+
+GET https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2023-10-10&endtime=2023-11-10&minmagnitude=7
+
+So for ASIDE, smart-contract can say: « Each NFT has its own Richer scale integrated into its metadata. When an Earthquake whose classification is the same as your NFT, occurs, it will be unlocked. »
+
+RESULT EXAMPLE:
+
+{
+    "type": "FeatureCollection",
+    "metadata": {
+        "generated": 1702483360000,
+        "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2023-10-10&endtime=2023-11-10&minmagnitude=7",
+        "title": "USGS Earthquakes",
+        "status": 200,
+        "api": "1.14.0",
+        "count": 1
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 7.1,
+                "place": "Banda Sea",
+                "time": 1699419230283,
+                "updated": 1701919288870,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000l9h4",
+                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us7000l9h4&format=geojson",
+                "felt": 5,
+                "cdi": 7.4,
+                "mmi": 6.062,
+                "alert": "green",
+                "status": "reviewed",
+                "tsunami": 0,
+                "sig": 779,
+                "net": "us",
+                "code": "7000l9h4",
+                "ids": ",us7000l9h4,",
+                "sources": ",us,",
+                "types": ",dyfi,finite-fault,general-text,ground-failure,impact-text,losspager,moment-tensor,origin,phase-data,shakemap,",
+                "nst": 142,
+                "dmin": 5.773,
+                "rms": 0.72,
+                "gap": 53,
+                "magType": "mww",
+                "type": "earthquake",
+                "title": "M 7.1 - Banda Sea"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    129.5474,
+                    -6.4189,
+                    10
+                ]
+            },
+            "id": "us7000l9h4"
+        }
+    ]
+}
+Paramaters list: https://earthquake.usgs.gov/fdsnws/event/1/
+
+AIR POLLUTION
+
+By using openwheather i add no problem with finding data related to air pollution on a defined location.
+
+The “main.aqi” gives us the air quality at the time of the query, rated from 1 to 5 Where 1 = Good, 2 = Fair, 3 = Moderate, 4 = Poor, 5 = Very Poor.
+
+API KEY: 13ce502af0eb9d469c3b8a0e76eaadef
+
+GET http://api.openweathermap.org/data/2.5/air_pollution?lat=50&lon=50&appid=13ce502af0eb9d469c3b8a0e76eaadef
+
+RESULT EXAMPLE
+
+{"coord":{"lon":50,"lat":50},"list":[{"main":{"aqi":2},"components":
+{"co":250.34,"no":0,"no2":0.95,"o3":72.24,"so2":0.57,"pm2_5":3.08,"pm10":12.41,"nh3":0.08},
+"dt":1702483707}]}
+For historical data on air quality
+
+GET http://api.openweathermap.org/data/2.5/air_pollution/history?lat=6.1944&lon=106.8229&start=1701772672&end=1702377472&appid=13ce502af0eb9d469c3b8a0e76eaadef
+
+RESULT (shorten)
+
+"coord": {
+        "lon": 106.8229,
+        "lat": 6.1944
+    },
+    "list": [
+        {
+            "main": {
+                "aqi": 2
+            },
+            "components": {
+                "co": 226.97,
+                "no": 0,
+                "no2": 1.08,
+                "o3": 66.52,
+                "so2": 0.59,
+                "pm2_5": 3.12,
+                "pm10": 6.93,
+                "nh3": 0
+            },
+            "dt": 1701774000
+        },
+        {
+            "main": {
+                "aqi": 2
+            },
+            "components": {
+                "co": 223.64,
+                "no": 0,
+                "no2": 1.03,
+                "o3": 62.94,
+                "so2": 0.69,
+                "pm2_5": 3.06,
+                "pm10": 8.02,
+                "nh3": 0
+            },
+            "dt": 1701777600
+        },
+        {
+            "main": {
+                "aqi": 2
+            },
+            "components": {
+                "co": 220.3,
+                "no": 0,
+                "no2": 1.06,
+                "o3": 60.8,
+                "so2": 0.77,
+                "pm2_5": 2.84,
+                "pm10": 8.48,
+                "nh3": 0
+            },
+            "dt": 1701781200
+        },
+        {
+            "main": {
+                "aqi": 1
+            },
+            "components": {
+                "co": 211.95,
+                "no": 0,
+                "no2": 1.1,
+                "o3": 57.94,
+                "so2": 0.81,
+                "pm2_5": 2.45,
+                "pm10": 8.16,
+                "nh3": 0
+            },
+            "dt": 1701784800
+        },
+        {
+            "main": {
+                "aqi": 1
+            },
+            "components": {
+                "co": 205.28,
+                "no": 0,
+                "no2": 1.1,
+                "o3": 55.79,
+                "so2": 0.8,
+                "pm2_5": 2.08,
+                "pm10": 7.49,
+                "nh3": 0
+            },
+            "dt": 1701788400
+        },
+Documentation:https://openweathermap.org/api/air-pollution
+
+StormGlass
+
+API KEY: StormGlass 9196d9a8-98e5-11ee-8309-0242ac130002-9196da7a-98e5-11ee-8309-0242ac130002
+
+The API key does not expire
+
+https://dashboard.stormglass.io/
+
+GET https://api.stormglass.io/v2/weather/point?lat=48.95933265196069&lng=-1.9769188331016494&params=waveHeight&start=2023-07-12T17&end=2023-11-12T17
+
+EXEMPLE FEEDBACK FOR WAVE HEIGHT ON A BEACH NEAR ST MALO
+
+{
+    "hours": [
+        {
+            "time": "2024-01-08T00:00:00+00:00",
+            "waveHeight": {
+                "dwd": 1.32,
+                "icon": 1.0,
+                "meteo": 0.69,
+                "noaa": 1.03,
+                "sg": 0.69
+            }
+        },
+        {
+            "time": "2024-01-08T01:00:00+00:00",
+            "waveHeight": {
+                "dwd": 1.37,
+                "icon": 1.04,
+                "meteo": 0.72,
+                "noaa": 1.05,
+                "sg": 0.72
+            }
+        },
+        {
+            "time": "2024-01-08T02:00:00+00:00",
+            "waveHeight": {
+                "dwd": 1.37,
+                "icon": 1.08,
+                "meteo": 0.75,
+                "noaa": 1.06,
+                "sg": 0.75
+            }
+        },
+        {
+            "time": "2024-01-08T03:00:00+00:00",
+            "waveHeight": {
+                "dwd": 1.43,
+                "icon": 1.12,
+                "meteo": 0.78,
+                "noaa": 1.08,
+                "sg": 0.78
+            }
+        },
+        {
+            "time": "2024-01-08T04:00:00+00:00",
+            "waveHeight": {
+                "dwd": 1.53,
+                "icon": 1.18,
+                "meteo": 0.78,
+                "noaa": 1.07,
+                "sg": 0.78
+            }
+        },
+        {
+            "time": "2024-01-08T05:00:00+00:00",
+            "waveHeight": {
+                "dwd": 1.62,
+                "icon": 1.25,
+                "meteo": 0.79,
+                "noaa": 1.07,
+                "sg": 0.79
+            }
+        },
+        {
+            "time": "2024-01-08T06:00:00+00:00",
+            "waveHeight": {
+                "dwd": 1.69,
+                "icon": 1.31,
+                "meteo": 0.79,
+                "noaa": 1.06,
+                "sg": 0.79
+            }
+        },
+        {
+            "time": "2024-01-08T07:00:00+00:00",
+            "waveHeight": {
+                "dwd": 1.73,
+                "icon": 1.21,
+                "meteo": 0.74,
+                "noaa": 1.04,
+                "sg": 0.74
+            }
+        },
+        {
+Last changed by  
+ 
+DistribGallery ·Follow
+ 0
+ 28
+Published on  HackMD
