@@ -1,5 +1,3 @@
-Here is the text formatted in Markdown with code blocks:
-
 # SOLAR FLARE
 
 ```
